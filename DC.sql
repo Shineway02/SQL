@@ -115,3 +115,28 @@ else
 begin
 	print 'borrs.n15 欄位已存在'
 end
+
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='cardealno'
+where a.name='borrs' and b.column_id is null)
+begin
+	alter table borrs add cardealno nvarchar(20) null
+end
+else
+begin
+	print 'borrs.cardealno 欄位已存在'
+end
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='cardeal'
+where a.name='borrs' and b.column_id is null)
+begin
+	alter table borrs add cardeal nvarchar(30) null
+end
+else
+begin
+	print 'borrs.cardeal 欄位已存在'
+end
