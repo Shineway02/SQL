@@ -140,3 +140,16 @@ else
 begin
 	print 'borrs.cardeal 欄位已存在'
 end
+-- DRIVER
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='driver'
+where a.name='driver' and b.column_id is null)
+begin
+	alter table driver add driver nvarchar(20) null
+end
+else
+begin
+	print 'driver.driver 欄位已存在'
+end
