@@ -153,3 +153,53 @@ else
 begin
 	print 'driver.driver 欄位已存在'
 end
+-- BORR add cardealno,cardeal
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='cardealno'
+where a.name='borr' and b.column_id is null)
+begin
+	alter table borr add cardealno nvarchar(20) null
+end
+else
+begin
+	print 'borr.cardealno 欄位已存在'
+end
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='cardeal'
+where a.name='borr' and b.column_id is null)
+begin
+	alter table borr add cardeal nvarchar(50) null
+end
+else
+begin
+	print 'borr.cardeal 欄位已存在'
+end
+-- BORRS add carno,caseno
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='carno'
+where a.name='borrs' and b.column_id is null)
+begin
+	alter table borrs add carno nvarchar(20) null
+end
+else
+begin
+	print 'borrs.carno 欄位已存在'
+end
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='caseno'
+where a.name='borrs' and b.column_id is null)
+begin
+	alter table borrs add caseno nvarchar(20) null
+end
+else
+begin
+	print 'borrs.caseno 欄位已存在'
+end
