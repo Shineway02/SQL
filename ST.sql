@@ -255,3 +255,17 @@ else
 begin
 	print 'cubs109.total 欄位已存在'
 end
+-- add field length
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='address'
+where a.name='vcca' and b.column_id is null)
+begin
+	print 'vcca.address 欄位不存在'
+	
+end
+else
+begin
+	alter table vcca alter column [address] nvarchar(100) null
+end
