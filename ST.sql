@@ -269,3 +269,86 @@ else
 begin
 	alter table vcca alter column [address] nvarchar(100) null
 end
+
+-----------------------
+GO
+SET QUOTED_IDENTIFIER OFF 
+declare @cmd nvarchar(max)
+declare @name nvarchar(max)	
+declare @n int
+declare cursor_table cursor for
+select [name] from sys.tables where name like 'cubs[0-9][0-9][0-9]'	
+open cursor_table
+fetch next from cursor_table
+into @name	
+while(@@FETCH_STATUS <> -1)
+begin
+	--記錄鋼捲、皮膜、保護膜、物料金額、重量用
+	set @n = 1
+	while @n<9
+	begin
+		if exists(
+		select *
+		from sys.tables a
+		left join sys.columns b on a.object_id = b.object_id and b.name='x'+RIGHT('00'+cast(@n as nvarchar),2)
+		where a.name=@name and b.column_id is null)
+		begin
+			set @cmd = "alter table "+@name+" add x"+RIGHT('00'+cast(@n as nvarchar),2)+" float null"
+			execute sp_executesql @cmd
+		end
+		else
+		begin
+			print @name+'.x'+RIGHT('00'+cast(@n as nvarchar),2)+' 欄位已存在'
+		end
+		if exists(
+		select *
+		from sys.tables a
+		left join sys.columns b on a.object_id = b.object_id and b.name='y'+RIGHT('00'+cast(@n as nvarchar),2)
+		where a.name=@name and b.column_id is null)
+		begin
+			set @cmd = "alter table "+@name+" add y"+RIGHT('00'+cast(@n as nvarchar),2)+" float null"
+			execute sp_executesql @cmd
+		end
+		else
+		begin
+			print @name+'.y'+RIGHT('00'+cast(@n as nvarchar),2)+' 欄位已存在'
+		end
+		set @n=@n+1
+	end
+	fetch next from cursor_table
+	into @name
+end
+close cursor_table
+deallocate cursor_table
+
+set @n = 1
+while @n<9
+begin
+	if exists(
+	select *
+	from sys.tables a
+	left join sys.columns b on a.object_id = b.object_id and b.name='x'+RIGHT('00'+cast(@n as nvarchar),2)
+	where a.name='cubs' and b.column_id is null)
+	begin
+		set @cmd = "alter table cubs add x"+RIGHT('00'+cast(@n as nvarchar),2)+" float null"
+		execute sp_executesql @cmd
+	end
+	else
+	begin
+		print 'cubs.x'+RIGHT('00'+cast(@n as nvarchar),2)+' 欄位已存在'
+	end
+	if exists(
+	select *
+	from sys.tables a
+	left join sys.columns b on a.object_id = b.object_id and b.name='y'+RIGHT('00'+cast(@n as nvarchar),2)
+	where a.name='cubs' and b.column_id is null)
+	begin
+		set @cmd = "alter table cubs add y"+RIGHT('00'+cast(@n as nvarchar),2)+" float null"
+		execute sp_executesql @cmd
+	end
+	else
+	begin
+		print 'cubs.y'+RIGHT('00'+cast(@n as nvarchar),2)+' 欄位已存在'
+	end
+	set @n=@n+1
+end
