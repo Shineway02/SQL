@@ -203,3 +203,55 @@ else
 begin
 	print 'borrs.caseno 欄位已存在'
 end
+--發票開立、接收確認、作廢、作廢確認
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='issend'
+where a.name='vcca' and b.column_id is null)
+begin
+	alter table vcca add issend bit null
+end
+else
+begin
+	print 'vcca.issend 欄位已存在'
+end
+
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='issendconfirm'
+where a.name='vcca' and b.column_id is null)
+begin
+	alter table vcca add issendconfirm bit null
+end
+else
+begin
+	print 'vcca.issendconfirm 欄位已存在'
+end
+
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='isvoid'
+where a.name='vcca' and b.column_id is null)
+begin
+	alter table vcca add isvoid bit null
+end
+else
+begin
+	print 'vcca.isvoid 欄位已存在'
+end
+
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='isvoidconfirm'
+where a.name='vcca' and b.column_id is null)
+begin
+	alter table vcca add isvoidconfirm bit null
+end
+else
+begin
+	print 'vcca.isvoidconfirm 欄位已存在'
+end
