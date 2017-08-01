@@ -404,3 +404,17 @@ else
 begin
 	print 'vcca.isvoidconfirm 欄位已存在'
 end
+
+-- CUST 增加  messagetype,判斷要開立發票還是存證
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='messagetype'
+where a.name='cust' and b.column_id is null)
+begin
+	alter table cust add messagetype nvarchar(10) null
+end
+else
+begin
+	print 'cust.messagetype 欄位已存在'
+end
