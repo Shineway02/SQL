@@ -418,3 +418,29 @@ else
 begin
 	print 'cust.messagetype 欄位已存在'
 end
+---  VCCB issend,isconfirm
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='issend'
+where a.name='vccb' and b.column_id is null)
+begin
+	alter table vccb add issend bit null
+end
+else
+begin
+	print 'vccb.issend 欄位已存在'
+end
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='isconfirm'
+where a.name='vccb' and b.column_id is null)
+begin
+	alter table vccb add isconfirm bit null
+end
+else
+begin
+	print 'vccb.isconfirm 欄位已存在'
+end
+
