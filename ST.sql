@@ -522,6 +522,20 @@ else
 begin
 	print 'vcca.npoban 欄位已存在'
 end
+-----CustomsClearanceMarkEnum
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='ccm'
+where a.name='vcca' and b.column_id is null)
+begin
+	alter table vcca add ccm nvarchar(1) null
+end
+else
+begin
+	print 'vcca.ccm 欄位已存在'
+end
+
 
 
 
