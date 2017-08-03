@@ -294,3 +294,84 @@ else
 begin
 	print 'vccb.isconfirm 欄位已存在'
 end
+---VCCA
+------捐贈註記
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='donatemark'
+where a.name='vcca' and b.column_id is null)
+begin
+	alter table vcca add donatemark bit null
+end
+else
+begin
+	print 'vcca.donatemark 欄位已存在'
+end
+------載具類別號碼
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='carriertype'
+where a.name='vcca' and b.column_id is null)
+begin
+	alter table vcca add carriertype nvarchar(6) null
+end
+else
+begin
+	print 'vcca.carriertype 欄位已存在'
+end
+------載具顯碼id
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='carrierid1'
+where a.name='vcca' and b.column_id is null)
+begin
+	alter table vcca add carrierid1 nvarchar(64) null
+end
+else
+begin
+	print 'vcca.carrierid1 欄位已存在'
+end
+------載具隱碼id
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='carrierid2'
+where a.name='vcca' and b.column_id is null)
+begin
+	alter table vcca add carrierid2 nvarchar(64) null
+end
+else
+begin
+	print 'vcca.carrierid2 欄位已存在'
+end
+------紙本電子發票已列印註記
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='printmark'
+where a.name='vcca' and b.column_id is null)
+begin
+	alter table vcca add printmark nvarchar(1) null
+end
+else
+begin
+	print 'vcca.printmark 欄位已存在'
+end
+------發票捐贈對象
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='npoban'
+where a.name='vcca' and b.column_id is null)
+begin
+	alter table vcca add npoban nvarchar(10) null
+end
+else
+begin
+	print 'vcca.npoban 欄位已存在'
+end
+
+
