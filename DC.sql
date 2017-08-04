@@ -233,27 +233,27 @@ end
 if exists(
 select *
 from sys.tables a
-left join sys.columns b on a.object_id = b.object_id and b.name='isvoid'
+left join sys.columns b on a.object_id = b.object_id and b.name='iscancel'
 where a.name='vcca' and b.column_id is null)
 begin
-	alter table vcca add isvoid bit null
+	alter table vcca add iscancel bit null
 end
 else
 begin
-	print 'vcca.isvoid 欄位已存在'
+	print 'vcca.iscancel 欄位已存在'
 end
 
 if exists(
 select *
 from sys.tables a
-left join sys.columns b on a.object_id = b.object_id and b.name='isvoidconfirm'
+left join sys.columns b on a.object_id = b.object_id and b.name='iscancelconfirm'
 where a.name='vcca' and b.column_id is null)
 begin
-	alter table vcca add isvoidconfirm bit null
+	alter table vcca add iscancelconfirm bit null
 end
 else
 begin
-	print 'vcca.isvoidconfirm 欄位已存在'
+	print 'vcca.iscancelconfirm 欄位已存在'
 end
 
 -- CUST 增加  messagetype,判斷要開立發票還是存證
@@ -385,6 +385,59 @@ end
 else
 begin
 	print 'vcca.ccm 欄位已存在'
+end
+
+-- C0701 註銷發票
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='isvoid'
+where a.name='vcca' and b.column_id is null)
+begin
+	alter table vcca add isvoid bit null
+end
+else
+begin
+	print 'vcca.isvoid 欄位已存在'
+end
+
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='voiddate'
+where a.name='vcca' and b.column_id is null)
+begin
+	alter table vcca add voiddate nvarchar(20) null
+end
+else
+begin
+	print 'vcca.voiddate 欄位已存在'
+end
+
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='voidtime'
+where a.name='vcca' and b.column_id is null)
+begin
+	alter table vcca add voidtime nvarchar(20) null
+end
+else
+begin
+	print 'vcca.voidtime 欄位已存在'
+end
+
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='voidreason'
+where a.name='vcca' and b.column_id is null)
+begin
+	alter table vcca add voidreason nvarchar(20) null
+end
+else
+begin
+	print 'vcca.voidreason 欄位已存在'
 end
 
 
