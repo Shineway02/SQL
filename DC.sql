@@ -440,4 +440,18 @@ begin
 	print 'vcca.voidreason 欄位已存在'
 end
 
+--- carsals.partno
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='partno'
+where a.name='carsals' and b.column_id is null)
+begin
+	alter table carsals add partno nvarchar(20) null
+end
+else
+begin
+	print 'carsals,partno 欄位已存在'
+end
+
 
