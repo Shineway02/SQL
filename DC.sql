@@ -454,4 +454,16 @@ begin
 	print 'carsals,partno 欄位已存在'
 end
 
-
+--RC2A isconfirm
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='isconfirm'
+where a.name='rc2a' and b.column_id is null)
+begin
+	alter table rc2a add isconfirm nvarchar(20) null
+end
+else
+begin
+	print 'rc2a.isconfirm 欄位已存在'
+end
