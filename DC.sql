@@ -454,16 +454,55 @@ begin
 	print 'carsals,partno 欄位已存在'
 end
 
---RC2A isconfirm
+--RC2A issend,issendconfirm
 if exists(
 select *
 from sys.tables a
-left join sys.columns b on a.object_id = b.object_id and b.name='isconfirm'
+left join sys.columns b on a.object_id = b.object_id and b.name='issend'
 where a.name='rc2a' and b.column_id is null)
 begin
-	alter table rc2a add isconfirm nvarchar(20) null
+	alter table rc2a add issend bit null
 end
 else
 begin
-	print 'rc2a.isconfirm 欄位已存在'
+	print 'rc2a.issend 欄位已存在'
+end
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='issendconfirm'
+where a.name='rc2a' and b.column_id is null)
+begin
+	alter table rc2a add issendconfirm bit null
+end
+else
+begin
+	print 'rc2a.issendconfirm 欄位已存在'
+end
+
+--RC2A iscancel,iscancelconfirm
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='iscancel'
+where a.name='rc2a' and b.column_id is null)
+begin
+	alter table rc2a add iscancel bit null
+end
+else
+begin
+	print 'rc2a.iscancel 欄位已存在'
+end
+
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='iscancelconfirm'
+where a.name='rc2a' and b.column_id is null)
+begin
+	alter table rc2a add iscancelconfirm bit null
+end
+else
+begin
+	print 'rc2a.iscancelconfirm 欄位已存在'
 end
