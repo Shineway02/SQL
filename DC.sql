@@ -506,3 +506,67 @@ else
 begin
 	print 'rc2a.iscancelconfirm 欄位已存在'
 end
+--VCCB    iscancel,iscancelconfirm
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='iscancel'
+where a.name='vccb' and b.column_id is null)
+begin
+	alter table vccb add iscancel bit null
+end
+else
+begin
+	print 'vccb.iscancel 欄位已存在'
+end
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='iscancelconfirm'
+where a.name='vccb' and b.column_id is null)
+begin
+	alter table vccb add iscancelconfirm bit null
+end
+else
+begin
+	print 'vccb.iscancelconfirm 欄位已存在'
+end
+--VCCA  status
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='status'
+where a.name='vcca' and b.column_id is null)
+begin
+	alter table vcca add [status] nvarchar(20) null
+end
+else
+begin
+	print 'vcca.status 欄位已存在'
+end
+--RC2A  status
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='status'
+where a.name='rc2a' and b.column_id is null)
+begin
+	alter table rc2a add [status] nvarchar(20) null
+end
+else
+begin
+	print 'rc2a.status 欄位已存在'
+end
+--VCCB  status
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='status'
+where a.name='vccb' and b.column_id is null)
+begin
+	alter table vccb add [status] nvarchar(20) null
+end
+else
+begin
+	print 'vccb.status 欄位已存在'
+end
