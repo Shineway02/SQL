@@ -705,3 +705,44 @@ else
 begin
 	print 'vccb.status 欄位已存在'
 end
+
+--RC2a  taxrate
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='taxrate'
+where a.name='rc2a' and b.column_id is null)
+begin
+	alter table rc2a add taxrate float null
+end
+else
+begin
+	print 'rc2a.taxrate 欄位已存在'
+end
+
+--RC2a  cancelreason
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='cancelreason'
+where a.name='rc2a' and b.column_id is null)
+begin
+	alter table rc2a add cancelreason nvarchar(60) null
+end
+else
+begin
+	print 'rc2a.cancelreason 欄位已存在'
+end
+--VCCB nob    對方傳來的折讓單號
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='nob'
+where a.name='vccb' and b.column_id is null)
+begin
+	alter table vccb add nob nvarchar(20) null
+end
+else
+begin
+	print 'vccb.nob 欄位已存在'
+end
