@@ -285,7 +285,7 @@ while(@@FETCH_STATUS <> -1)
 begin
 	--記錄鋼捲、皮膜、保護膜、物料金額、重量用
 	set @n = 1
-	while @n<9
+	while @n<11
 	begin
 		if exists(
 		select *
