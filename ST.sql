@@ -749,6 +749,7 @@ end
 
 GO
 -- cucs   w01 直接人工, w02 製造費用   
+--        m01 成品金額, m02 樣品金額, m03 報廢金額    (生產作業金額 = 成品金額 + 樣品金額 + 報廢金額)
 	SET QUOTED_IDENTIFIER OFF 
 	declare @cmd nvarchar(max)
 	declare @table nvarchar(20)
@@ -787,6 +788,49 @@ GO
 		else
 		begin
 			print @table+'.w02 欄位已存在'
+		end
+		
+		--m01
+		if exists(
+		select *
+		from sys.tables a
+		left join sys.columns b on a.object_id = b.object_id and b.name='m01'
+		where a.name=@table and b.column_id is null)
+		begin
+			set @cmd = "alter table "+@table+" add m01 float null"
+			execute sp_executesql @cmd
+		end
+		else
+		begin
+			print @table+'.m01 欄位已存在'
+		end
+		--m02
+		if exists(
+		select *
+		from sys.tables a
+		left join sys.columns b on a.object_id = b.object_id and b.name='m02'
+		where a.name=@table and b.column_id is null)
+		begin
+			set @cmd = "alter table "+@table+" add m02 float null"
+			execute sp_executesql @cmd
+		end
+		else
+		begin
+			print @table+'.m02 欄位已存在'
+		end
+		--m03
+		if exists(
+		select *
+		from sys.tables a
+		left join sys.columns b on a.object_id = b.object_id and b.name='m03'
+		where a.name=@table and b.column_id is null)
+		begin
+			set @cmd = "alter table "+@table+" add m03 float null"
+			execute sp_executesql @cmd
+		end
+		else
+		begin
+			print @table+'.m03 欄位已存在'
 		end
 	
 		fetch next from cursor_table
