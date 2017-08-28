@@ -746,3 +746,52 @@ else
 begin
 	print 'vccb.nob 欄位已存在'
 end
+
+GO
+-- cucs   w01 直接人工, w02 製造費用   
+	SET QUOTED_IDENTIFIER OFF 
+	declare @cmd nvarchar(max)
+	declare @table nvarchar(20)
+	
+	declare cursor_table cursor for
+	select [name] from sys.tables where name like 'cucs%'
+	open cursor_table
+	fetch next from cursor_table
+	into @table
+	while(@@FETCH_STATUS <> -1)
+	begin
+		--w01
+		if exists(
+		select *
+		from sys.tables a
+		left join sys.columns b on a.object_id = b.object_id and b.name='w01'
+		where a.name=@table and b.column_id is null)
+		begin
+			set @cmd = "alter table "+@table+" add w01 float null"
+			execute sp_executesql @cmd
+		end
+		else
+		begin
+			print @table+'.w01 欄位已存在'
+		end
+		--w02
+		if exists(
+		select *
+		from sys.tables a
+		left join sys.columns b on a.object_id = b.object_id and b.name='w02'
+		where a.name=@table and b.column_id is null)
+		begin
+			set @cmd = "alter table "+@table+" add w02 float null"
+			execute sp_executesql @cmd
+		end
+		else
+		begin
+			print @table+'.w02 欄位已存在'
+		end
+	
+		fetch next from cursor_table
+		into @table
+	end
+	close cursor_table
+	deallocate cursor_table
+
