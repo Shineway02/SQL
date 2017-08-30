@@ -832,7 +832,22 @@ GO
 		begin
 			print @table+'.m03 欄位已存在'
 		end
-	
+		---------------------------------------------------------------------
+		--nob 2次加工  資料來源 cucs.noa+cucs.noq
+		if exists(
+		select *
+		from sys.tables a
+		left join sys.columns b on a.object_id = b.object_id and b.name='nob'
+		where a.name=@table and b.column_id is null)
+		begin
+			set @cmd = "alter table "+@table+" add nob nvarchar(20) null"
+			execute sp_executesql @cmd
+		end
+		else
+		begin
+			print @table+'.nob 欄位已存在'
+		end
+		
 		fetch next from cursor_table
 		into @table
 	end
