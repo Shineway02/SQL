@@ -747,6 +747,69 @@ begin
 	print 'vccb.nob 欄位已存在'
 end
 
+go
+--COSTA
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='price4'
+where a.name='costa' and b.column_id is null)
+begin
+	alter table costa add price4 float null
+end
+else
+begin
+	print 'costa.price4 欄位已存在'
+end
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='price5'
+where a.name='costa' and b.column_id is null)
+begin
+	alter table costa add price5 float null
+end
+else
+begin
+	print 'costa.price5 欄位已存在'
+end
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='price6'
+where a.name='costa' and b.column_id is null)
+begin
+	alter table costa add price6 float null
+end
+else
+begin
+	print 'costa.price6 欄位已存在'
+end
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='price7'
+where a.name='costa' and b.column_id is null)
+begin
+	alter table costa add price7 float null
+end
+else
+begin
+	print 'costa.price7 欄位已存在'
+end
+if exists(
+select *
+from sys.tables a
+left join sys.columns b on a.object_id = b.object_id and b.name='price8'
+where a.name='costa' and b.column_id is null)
+begin
+	alter table costa add price8 float null
+end
+else
+begin
+	print 'costa.price8 欄位已存在'
+end
+
 GO
 -- cucs   w01 直接人工, w02 製造費用   
 --        m01 成品金額, m02 樣品金額, m03 報廢金額    (生產作業金額 = 成品金額 + 樣品金額 + 報廢金額)
@@ -847,10 +910,85 @@ GO
 		begin
 			print @table+'.nob 欄位已存在'
 		end
+		---------------------------------------------------------------------
+		--weight11  盤盈重 
+		if exists(
+		select *
+		from sys.tables a
+		left join sys.columns b on a.object_id = b.object_id and b.name='weight11'
+		where a.name=@table and b.column_id is null)
+		begin
+			set @cmd = "alter table "+@table+" add weight11 float null"
+			execute sp_executesql @cmd
+		end
+		else
+		begin
+			print @table+'.weight11 欄位已存在'
+		end
+		
+		---------------------------------------------------------------------
+		--w03
+		if exists(
+		select *
+		from sys.tables a
+		left join sys.columns b on a.object_id = b.object_id and b.name='w03'
+		where a.name=@table and b.column_id is null)
+		begin
+			set @cmd = "alter table "+@table+" add w03 float null"
+			execute sp_executesql @cmd
+		end
+		else
+		begin
+			print @table+'.w03 欄位已存在'
+		end
+		
+		--w04
+		if exists(
+		select *
+		from sys.tables a
+		left join sys.columns b on a.object_id = b.object_id and b.name='w04'
+		where a.name=@table and b.column_id is null)
+		begin
+			set @cmd = "alter table "+@table+" add w04 float null"
+			execute sp_executesql @cmd
+		end
+		else
+		begin
+			print @table+'.w04 欄位已存在'
+		end
+		
+		--w05
+		if exists(
+		select *
+		from sys.tables a
+		left join sys.columns b on a.object_id = b.object_id and b.name='w05'
+		where a.name=@table and b.column_id is null)
+		begin
+			set @cmd = "alter table "+@table+" add w05 float null"
+			execute sp_executesql @cmd
+		end
+		else
+		begin
+			print @table+'.w05 欄位已存在'
+		end
+		
+		--m04
+		if exists(
+		select *
+		from sys.tables a
+		left join sys.columns b on a.object_id = b.object_id and b.name='m04'
+		where a.name=@table and b.column_id is null)
+		begin
+			set @cmd = "alter table "+@table+" add m04 float null"
+			execute sp_executesql @cmd
+		end
+		else
+		begin
+			print @table+'.m04 欄位已存在'
+		end
 		
 		fetch next from cursor_table
 		into @table
 	end
 	close cursor_table
 	deallocate cursor_table
-
