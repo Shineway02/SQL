@@ -1,4 +1,4 @@
--- å¸æ©ŸåŠ æ¸›é …å°æ‡‰å®¢æˆ¶åŠ æ¸›é …
+-- ¥q¾÷¥[´î¶µ¹ïÀ³«È¤á¥[´î¶µ
 if exists(
 select *
 from sys.tables a
@@ -9,9 +9,9 @@ begin
 end
 else
 begin
-	print 'carchg.custchgno æ¬„ä½å·²å­˜åœ¨'
+	print 'carchg.custchgno Äæ¦ì¤w¦s¦b'
 end
--- tboat èˆ¹é‚Šä½œæ¥­å¢åŠ   è»Šæ¬¡
+-- tboat ²îÃä§@·~¼W¥[  ¨®¦¸
 if exists(
 select *
 from sys.tables a
@@ -22,7 +22,7 @@ begin
 end
 else
 begin
-	print 'tboats.itemno æ¬„ä½å·²å­˜åœ¨'
+	print 'tboats.itemno Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -34,7 +34,7 @@ begin
 end
 else
 begin
-	print 'tboats.cardealno æ¬„ä½å·²å­˜åœ¨'
+	print 'tboats.cardealno Äæ¦ì¤w¦s¦b'
 end
 
 if exists(
@@ -47,7 +47,7 @@ begin
 end
 else
 begin
-	print 'tboats.cardeal æ¬„ä½å·²å­˜åœ¨'
+	print 'tboats.cardeal Äæ¦ì¤w¦s¦b'
 end
 
 
@@ -61,9 +61,9 @@ begin
 end
 else
 begin
-	print 'tboats.memo æ¬„ä½å·²å­˜åœ¨'
+	print 'tboats.memo Äæ¦ì¤w¦s¦b'
 end
---- BORR å¢åŠ QTIME è¨˜éŒ„ä¸Šå‚³çš„æ™‚é–“
+--- BORR ¼W¥[QTIME °O¿ı¤W¶Çªº®É¶¡
 if exists(
 select *
 from sys.tables a
@@ -74,16 +74,16 @@ begin
 end
 else
 begin
-	print 'borr.qtime æ¬„ä½å·²å­˜åœ¨'
+	print 'borr.qtime Äæ¦ì¤w¦s¦b'
 end
---- BORRS  æ¬„ä½å¤§å°è®Šå‹•
+--- BORRS  Äæ¦ì¤j¤pÅÜ°Ê
 if exists(
 select *
 from sys.tables a
 left join sys.columns b on a.object_id = b.object_id and b.name='indate'
 where a.name='borrs' and b.column_id is null)
 begin
-	print 'borrs.indate æ¬„ä½ä¸å­˜åœ¨'
+	print 'borrs.indate Äæ¦ì¤£¦s¦b'
 end
 else
 begin
@@ -96,13 +96,13 @@ from sys.tables a
 left join sys.columns b on a.object_id = b.object_id and b.name='edate'
 where a.name='borrs' and b.column_id is null)
 begin
-	print 'borrs.edate æ¬„ä½ä¸å­˜åœ¨'
+	print 'borrs.edate Äæ¦ì¤£¦s¦b'
 end
 else
 begin
 	alter table borrs alter column edate nvarchar(20) null
 end
--- BORRS å¢åŠ æ¬„ä½
+-- BORRS ¼W¥[Äæ¦ì
 if exists(
 select *
 from sys.tables a
@@ -113,7 +113,7 @@ begin
 end
 else
 begin
-	print 'borrs.n15 æ¬„ä½å·²å­˜åœ¨'
+	print 'borrs.n15 Äæ¦ì¤w¦s¦b'
 end
 
 if exists(
@@ -126,7 +126,7 @@ begin
 end
 else
 begin
-	print 'borrs.cardealno æ¬„ä½å·²å­˜åœ¨'
+	print 'borrs.cardealno Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -138,7 +138,7 @@ begin
 end
 else
 begin
-	print 'borrs.cardeal æ¬„ä½å·²å­˜åœ¨'
+	print 'borrs.cardeal Äæ¦ì¤w¦s¦b'
 end
 -- DRIVER
 if exists(
@@ -151,7 +151,7 @@ begin
 end
 else
 begin
-	print 'driver.driver æ¬„ä½å·²å­˜åœ¨'
+	print 'driver.driver Äæ¦ì¤w¦s¦b'
 end
 -- BORR add cardealno,cardeal
 if exists(
@@ -164,7 +164,7 @@ begin
 end
 else
 begin
-	print 'borr.cardealno æ¬„ä½å·²å­˜åœ¨'
+	print 'borr.cardealno Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -176,7 +176,7 @@ begin
 end
 else
 begin
-	print 'borr.cardeal æ¬„ä½å·²å­˜åœ¨'
+	print 'borr.cardeal Äæ¦ì¤w¦s¦b'
 end
 -- BORRS add carno,caseno
 if exists(
@@ -189,7 +189,7 @@ begin
 end
 else
 begin
-	print 'borrs.carno æ¬„ä½å·²å­˜åœ¨'
+	print 'borrs.carno Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -201,9 +201,9 @@ begin
 end
 else
 begin
-	print 'borrs.caseno æ¬„ä½å·²å­˜åœ¨'
+	print 'borrs.caseno Äæ¦ì¤w¦s¦b'
 end
---ç™¼ç¥¨é–‹ç«‹ã€æ¥æ”¶ç¢ºèªã€ä½œå»¢ã€ä½œå»¢ç¢ºèª
+--µo²¼¶}¥ß¡B±µ¦¬½T»{¡B§@¼o¡B§@¼o½T»{
 if exists(
 select *
 from sys.tables a
@@ -214,7 +214,7 @@ begin
 end
 else
 begin
-	print 'vcca.issend æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.issend Äæ¦ì¤w¦s¦b'
 end
 
 if exists(
@@ -227,7 +227,7 @@ begin
 end
 else
 begin
-	print 'vcca.issendconfirm æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.issendconfirm Äæ¦ì¤w¦s¦b'
 end
 
 if exists(
@@ -240,7 +240,7 @@ begin
 end
 else
 begin
-	print 'vcca.iscancel æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.iscancel Äæ¦ì¤w¦s¦b'
 end
 
 if exists(
@@ -253,10 +253,10 @@ begin
 end
 else
 begin
-	print 'vcca.iscancelconfirm æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.iscancelconfirm Äæ¦ì¤w¦s¦b'
 end
 
--- CUST å¢åŠ   messagetype,åˆ¤æ–·è¦é–‹ç«‹ç™¼ç¥¨é‚„æ˜¯å­˜è­‰
+-- CUST ¼W¥[  messagetype,§PÂ_­n¶}¥ßµo²¼ÁÙ¬O¦sÃÒ
 if exists(
 select *
 from sys.tables a
@@ -267,7 +267,7 @@ begin
 end
 else
 begin
-	print 'cust.messagetype æ¬„ä½å·²å­˜åœ¨'
+	print 'cust.messagetype Äæ¦ì¤w¦s¦b'
 end
 ---  VCCB issend,isconfirm
 if exists(
@@ -280,7 +280,7 @@ begin
 end
 else
 begin
-	print 'vccb.issend æ¬„ä½å·²å­˜åœ¨'
+	print 'vccb.issend Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -292,10 +292,10 @@ begin
 end
 else
 begin
-	print 'vccb.isconfirm æ¬„ä½å·²å­˜åœ¨'
+	print 'vccb.isconfirm Äæ¦ì¤w¦s¦b'
 end
 ---VCCA
-------æè´ˆè¨»è¨˜
+------®½ÃØµù°O
 if exists(
 select *
 from sys.tables a
@@ -306,9 +306,9 @@ begin
 end
 else
 begin
-	print 'vcca.donatemark æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.donatemark Äæ¦ì¤w¦s¦b'
 end
-------è¼‰å…·é¡åˆ¥è™Ÿç¢¼
+------¸ü¨ãÃş§O¸¹½X
 if exists(
 select *
 from sys.tables a
@@ -319,9 +319,9 @@ begin
 end
 else
 begin
-	print 'vcca.carriertype æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.carriertype Äæ¦ì¤w¦s¦b'
 end
-------è¼‰å…·é¡¯ç¢¼id
+------¸ü¨ãÅã½Xid
 if exists(
 select *
 from sys.tables a
@@ -332,9 +332,9 @@ begin
 end
 else
 begin
-	print 'vcca.carrierid1 æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.carrierid1 Äæ¦ì¤w¦s¦b'
 end
-------è¼‰å…·éš±ç¢¼id
+------¸ü¨ãÁô½Xid
 if exists(
 select *
 from sys.tables a
@@ -345,9 +345,9 @@ begin
 end
 else
 begin
-	print 'vcca.carrierid2 æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.carrierid2 Äæ¦ì¤w¦s¦b'
 end
-------ç´™æœ¬é›»å­ç™¼ç¥¨å·²åˆ—å°è¨»è¨˜
+------¯È¥»¹q¤lµo²¼¤w¦C¦Lµù°O
 if exists(
 select *
 from sys.tables a
@@ -358,9 +358,9 @@ begin
 end
 else
 begin
-	print 'vcca.printmark æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.printmark Äæ¦ì¤w¦s¦b'
 end
-------ç™¼ç¥¨æè´ˆå°è±¡
+------µo²¼®½ÃØ¹ï¶H
 if exists(
 select *
 from sys.tables a
@@ -371,7 +371,7 @@ begin
 end
 else
 begin
-	print 'vcca.npoban æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.npoban Äæ¦ì¤w¦s¦b'
 end
 -------CustomsClearanceMarkEnum
 if exists(
@@ -384,10 +384,10 @@ begin
 end
 else
 begin
-	print 'vcca.ccm æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.ccm Äæ¦ì¤w¦s¦b'
 end
 
--- C0701 è¨»éŠ·ç™¼ç¥¨
+-- C0701 µù¾Pµo²¼
 if exists(
 select *
 from sys.tables a
@@ -398,7 +398,7 @@ begin
 end
 else
 begin
-	print 'vcca.isvoid æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.isvoid Äæ¦ì¤w¦s¦b'
 end
 
 if exists(
@@ -411,7 +411,7 @@ begin
 end
 else
 begin
-	print 'vcca.voiddate æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.voiddate Äæ¦ì¤w¦s¦b'
 end
 
 if exists(
@@ -424,7 +424,7 @@ begin
 end
 else
 begin
-	print 'vcca.voidtime æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.voidtime Äæ¦ì¤w¦s¦b'
 end
 
 if exists(
@@ -437,7 +437,7 @@ begin
 end
 else
 begin
-	print 'vcca.voidreason æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.voidreason Äæ¦ì¤w¦s¦b'
 end
 
 --- carsals.partno
@@ -451,7 +451,7 @@ begin
 end
 else
 begin
-	print 'carsals,partno æ¬„ä½å·²å­˜åœ¨'
+	print 'carsals,partno Äæ¦ì¤w¦s¦b'
 end
 
 --RC2A issend,issendconfirm
@@ -465,7 +465,7 @@ begin
 end
 else
 begin
-	print 'rc2a.issend æ¬„ä½å·²å­˜åœ¨'
+	print 'rc2a.issend Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -477,7 +477,7 @@ begin
 end
 else
 begin
-	print 'rc2a.issendconfirm æ¬„ä½å·²å­˜åœ¨'
+	print 'rc2a.issendconfirm Äæ¦ì¤w¦s¦b'
 end
 
 --RC2A iscancel,iscancelconfirm
@@ -491,7 +491,7 @@ begin
 end
 else
 begin
-	print 'rc2a.iscancel æ¬„ä½å·²å­˜åœ¨'
+	print 'rc2a.iscancel Äæ¦ì¤w¦s¦b'
 end
 
 if exists(
@@ -504,7 +504,7 @@ begin
 end
 else
 begin
-	print 'rc2a.iscancelconfirm æ¬„ä½å·²å­˜åœ¨'
+	print 'rc2a.iscancelconfirm Äæ¦ì¤w¦s¦b'
 end
 --VCCB    iscancel,iscancelconfirm
 if exists(
@@ -517,7 +517,7 @@ begin
 end
 else
 begin
-	print 'vccb.iscancel æ¬„ä½å·²å­˜åœ¨'
+	print 'vccb.iscancel Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -529,7 +529,7 @@ begin
 end
 else
 begin
-	print 'vccb.iscancelconfirm æ¬„ä½å·²å­˜åœ¨'
+	print 'vccb.iscancelconfirm Äæ¦ì¤w¦s¦b'
 end
 --VCCA  status
 if exists(
@@ -542,7 +542,7 @@ begin
 end
 else
 begin
-	print 'vcca.status æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.status Äæ¦ì¤w¦s¦b'
 end
 --RC2A  status
 if exists(
@@ -555,7 +555,7 @@ begin
 end
 else
 begin
-	print 'rc2a.status æ¬„ä½å·²å­˜åœ¨'
+	print 'rc2a.status Äæ¦ì¤w¦s¦b'
 end
 --VCCB  status
 if exists(
@@ -568,7 +568,7 @@ begin
 end
 else
 begin
-	print 'vccb.status æ¬„ä½å·²å­˜åœ¨'
+	print 'vccb.status Äæ¦ì¤w¦s¦b'
 end
 
 --RC2a  taxrate
@@ -582,7 +582,7 @@ begin
 end
 else
 begin
-	print 'rc2a.taxrate æ¬„ä½å·²å­˜åœ¨'
+	print 'rc2a.taxrate Äæ¦ì¤w¦s¦b'
 end
 
 --RC2a  cancelreason
@@ -596,10 +596,10 @@ begin
 end
 else
 begin
-	print 'rc2a.cancelreason æ¬„ä½å·²å­˜åœ¨'
+	print 'rc2a.cancelreason Äæ¦ì¤w¦s¦b'
 end
 
---VCCB nob    å°æ–¹å‚³ä¾†çš„æŠ˜è®“å–®è™Ÿ
+--VCCB nob    ¹ï¤è¶Ç¨Óªº§éÅı³æ¸¹
 if exists(
 select *
 from sys.tables a
@@ -610,5 +610,5 @@ begin
 end
 else
 begin
-	print 'vccb.nob æ¬„ä½å·²å­˜åœ¨'
+	print 'vccb.nob Äæ¦ì¤w¦s¦b'
 end

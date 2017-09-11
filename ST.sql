@@ -13,7 +13,7 @@ begin
 	) ON [PRIMARY]
 end
 
---CUTS å¢åŠ æ¬„ä½
+--CUTS ¼W¥[Äæ¦ì
 if exists(
 select *
 from sys.tables a
@@ -24,7 +24,7 @@ begin
 end
 else
 begin
-	print 'cuts.total æ¬„ä½å·²å­˜åœ¨'
+	print 'cuts.total Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -36,7 +36,7 @@ begin
 end
 else
 begin
-	print 'cuts101.total æ¬„ä½å·²å­˜åœ¨'
+	print 'cuts101.total Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -48,7 +48,7 @@ begin
 end
 else
 begin
-	print 'cuts102.total æ¬„ä½å·²å­˜åœ¨'
+	print 'cuts102.total Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -60,7 +60,7 @@ begin
 end
 else
 begin
-	print 'cuts103.total æ¬„ä½å·²å­˜åœ¨'
+	print 'cuts103.total Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -72,7 +72,7 @@ begin
 end
 else
 begin
-	print 'cuts104.total æ¬„ä½å·²å­˜åœ¨'
+	print 'cuts104.total Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -84,7 +84,7 @@ begin
 end
 else
 begin
-	print 'cuts105.total æ¬„ä½å·²å­˜åœ¨'
+	print 'cuts105.total Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -96,7 +96,7 @@ begin
 end
 else
 begin
-	print 'cuts106.total æ¬„ä½å·²å­˜åœ¨'
+	print 'cuts106.total Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -108,7 +108,7 @@ begin
 end
 else
 begin
-	print 'cuts107.total æ¬„ä½å·²å­˜åœ¨'
+	print 'cuts107.total Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -120,7 +120,7 @@ begin
 end
 else
 begin
-	print 'cuts108.total æ¬„ä½å·²å­˜åœ¨'
+	print 'cuts108.total Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -132,7 +132,7 @@ begin
 end
 else
 begin
-	print 'cuts109.total æ¬„ä½å·²å­˜åœ¨'
+	print 'cuts109.total Äæ¦ì¤w¦s¦b'
 end
 --CUBS
 if exists(
@@ -145,7 +145,7 @@ begin
 end
 else
 begin
-	print 'cubs.total æ¬„ä½å·²å­˜åœ¨'
+	print 'cubs.total Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -157,7 +157,7 @@ begin
 end
 else
 begin
-	print 'cubs101.total æ¬„ä½å·²å­˜åœ¨'
+	print 'cubs101.total Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -169,7 +169,7 @@ begin
 end
 else
 begin
-	print 'cubs102.total æ¬„ä½å·²å­˜åœ¨'
+	print 'cubs102.total Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -181,7 +181,7 @@ begin
 end
 else
 begin
-	print 'cubs103.total æ¬„ä½å·²å­˜åœ¨'
+	print 'cubs103.total Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -193,7 +193,7 @@ begin
 end
 else
 begin
-	print 'cubs104.total æ¬„ä½å·²å­˜åœ¨'
+	print 'cubs104.total Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -205,7 +205,7 @@ begin
 end
 else
 begin
-	print 'cubs105.total æ¬„ä½å·²å­˜åœ¨'
+	print 'cubs105.total Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -217,7 +217,7 @@ begin
 end
 else
 begin
-	print 'cubs106.total æ¬„ä½å·²å­˜åœ¨'
+	print 'cubs106.total Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -229,7 +229,7 @@ begin
 end
 else
 begin
-	print 'cubs107.total æ¬„ä½å·²å­˜åœ¨'
+	print 'cubs107.total Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -241,7 +241,7 @@ begin
 end
 else
 begin
-	print 'cubs108.total æ¬„ä½å·²å­˜åœ¨'
+	print 'cubs108.total Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -253,7 +253,7 @@ begin
 end
 else
 begin
-	print 'cubs109.total æ¬„ä½å·²å­˜åœ¨'
+	print 'cubs109.total Äæ¦ì¤w¦s¦b'
 end
 -- add field length
 if exists(
@@ -262,7 +262,7 @@ from sys.tables a
 left join sys.columns b on a.object_id = b.object_id and b.name='address'
 where a.name='vcca' and b.column_id is null)
 begin
-	print 'vcca.address æ¬„ä½ä¸å­˜åœ¨'
+	print 'vcca.address Äæ¦ì¤£¦s¦b'
 	
 end
 else
@@ -283,7 +283,7 @@ fetch next from cursor_table
 into @name	
 while(@@FETCH_STATUS <> -1)
 begin
-	--è¨˜éŒ„é‹¼æ²ã€çš®è†œã€ä¿è­·è†œã€ç‰©æ–™é‡‘é¡ã€é‡é‡ç”¨
+	--°O¿ı¿û±²¡B¥Ö½¤¡B«OÅ@½¤¡Bª«®Æª÷ÃB¡B­«¶q¥Î
 	set @n = 1
 	while @n<11
 	begin
@@ -298,7 +298,7 @@ begin
 		end
 		else
 		begin
-			print @name+'.x'+RIGHT('00'+cast(@n as nvarchar),2)+' æ¬„ä½å·²å­˜åœ¨'
+			print @name+'.x'+RIGHT('00'+cast(@n as nvarchar),2)+' Äæ¦ì¤w¦s¦b'
 		end
 		if exists(
 		select *
@@ -311,7 +311,7 @@ begin
 		end
 		else
 		begin
-			print @name+'.y'+RIGHT('00'+cast(@n as nvarchar),2)+' æ¬„ä½å·²å­˜åœ¨'
+			print @name+'.y'+RIGHT('00'+cast(@n as nvarchar),2)+' Äæ¦ì¤w¦s¦b'
 		end
 		set @n=@n+1
 	end
@@ -335,7 +335,7 @@ begin
 	end
 	else
 	begin
-		print 'cubs.x'+RIGHT('00'+cast(@n as nvarchar),2)+' æ¬„ä½å·²å­˜åœ¨'
+		print 'cubs.x'+RIGHT('00'+cast(@n as nvarchar),2)+' Äæ¦ì¤w¦s¦b'
 	end
 	if exists(
 	select *
@@ -348,11 +348,11 @@ begin
 	end
 	else
 	begin
-		print 'cubs.y'+RIGHT('00'+cast(@n as nvarchar),2)+' æ¬„ä½å·²å­˜åœ¨'
+		print 'cubs.y'+RIGHT('00'+cast(@n as nvarchar),2)+' Äæ¦ì¤w¦s¦b'
 	end
 	set @n=@n+1
 end
---ç™¼ç¥¨é–‹ç«‹ã€æ¥æ”¶ç¢ºèªã€ä½œå»¢ã€ä½œå»¢ç¢ºèª
+--µo²¼¶}¥ß¡B±µ¦¬½T»{¡B§@¼o¡B§@¼o½T»{
 if exists(
 select *
 from sys.tables a
@@ -363,7 +363,7 @@ begin
 end
 else
 begin
-	print 'vcca.issend æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.issend Äæ¦ì¤w¦s¦b'
 end
 
 if exists(
@@ -376,7 +376,7 @@ begin
 end
 else
 begin
-	print 'vcca.issendconfirm æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.issendconfirm Äæ¦ì¤w¦s¦b'
 end
 
 if exists(
@@ -389,7 +389,7 @@ begin
 end
 else
 begin
-	print 'vcca.iscancel æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.iscancel Äæ¦ì¤w¦s¦b'
 end
 
 if exists(
@@ -402,10 +402,10 @@ begin
 end
 else
 begin
-	print 'vcca.iscancelconfirm æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.iscancelconfirm Äæ¦ì¤w¦s¦b'
 end
 
--- CUST å¢åŠ   messagetype,åˆ¤æ–·è¦é–‹ç«‹ç™¼ç¥¨é‚„æ˜¯å­˜è­‰
+-- CUST ¼W¥[  messagetype,§PÂ_­n¶}¥ßµo²¼ÁÙ¬O¦sÃÒ
 if exists(
 select *
 from sys.tables a
@@ -416,7 +416,7 @@ begin
 end
 else
 begin
-	print 'cust.messagetype æ¬„ä½å·²å­˜åœ¨'
+	print 'cust.messagetype Äæ¦ì¤w¦s¦b'
 end
 ---  VCCB issend,isconfirm
 if exists(
@@ -429,7 +429,7 @@ begin
 end
 else
 begin
-	print 'vccb.issend æ¬„ä½å·²å­˜åœ¨'
+	print 'vccb.issend Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -441,10 +441,10 @@ begin
 end
 else
 begin
-	print 'vccb.isconfirm æ¬„ä½å·²å­˜åœ¨'
+	print 'vccb.isconfirm Äæ¦ì¤w¦s¦b'
 end
 ---VCCA
-------æè´ˆè¨»è¨˜
+------®½ÃØµù°O
 if exists(
 select *
 from sys.tables a
@@ -455,9 +455,9 @@ begin
 end
 else
 begin
-	print 'vcca.donatemark æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.donatemark Äæ¦ì¤w¦s¦b'
 end
-------è¼‰å…·é¡åˆ¥è™Ÿç¢¼
+------¸ü¨ãÃş§O¸¹½X
 if exists(
 select *
 from sys.tables a
@@ -468,9 +468,9 @@ begin
 end
 else
 begin
-	print 'vcca.carriertype æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.carriertype Äæ¦ì¤w¦s¦b'
 end
-------è¼‰å…·é¡¯ç¢¼id
+------¸ü¨ãÅã½Xid
 if exists(
 select *
 from sys.tables a
@@ -481,9 +481,9 @@ begin
 end
 else
 begin
-	print 'vcca.carrierid1 æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.carrierid1 Äæ¦ì¤w¦s¦b'
 end
-------è¼‰å…·éš±ç¢¼id
+------¸ü¨ãÁô½Xid
 if exists(
 select *
 from sys.tables a
@@ -494,9 +494,9 @@ begin
 end
 else
 begin
-	print 'vcca.carrierid2 æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.carrierid2 Äæ¦ì¤w¦s¦b'
 end
-------ç´™æœ¬é›»å­ç™¼ç¥¨å·²åˆ—å°è¨»è¨˜
+------¯È¥»¹q¤lµo²¼¤w¦C¦Lµù°O
 if exists(
 select *
 from sys.tables a
@@ -507,9 +507,9 @@ begin
 end
 else
 begin
-	print 'vcca.printmark æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.printmark Äæ¦ì¤w¦s¦b'
 end
-------ç™¼ç¥¨æè´ˆå°è±¡
+------µo²¼®½ÃØ¹ï¶H
 if exists(
 select *
 from sys.tables a
@@ -520,7 +520,7 @@ begin
 end
 else
 begin
-	print 'vcca.npoban æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.npoban Äæ¦ì¤w¦s¦b'
 end
 -----CustomsClearanceMarkEnum
 if exists(
@@ -533,10 +533,10 @@ begin
 end
 else
 begin
-	print 'vcca.ccm æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.ccm Äæ¦ì¤w¦s¦b'
 end
 
--- C0701 è¨»éŠ·ç™¼ç¥¨
+-- C0701 µù¾Pµo²¼
 if exists(
 select *
 from sys.tables a
@@ -547,7 +547,7 @@ begin
 end
 else
 begin
-	print 'vcca.isvoid æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.isvoid Äæ¦ì¤w¦s¦b'
 end
 
 if exists(
@@ -560,7 +560,7 @@ begin
 end
 else
 begin
-	print 'vcca.voiddate æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.voiddate Äæ¦ì¤w¦s¦b'
 end
 
 if exists(
@@ -573,7 +573,7 @@ begin
 end
 else
 begin
-	print 'vcca.voidtime æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.voidtime Äæ¦ì¤w¦s¦b'
 end
 
 if exists(
@@ -586,7 +586,7 @@ begin
 end
 else
 begin
-	print 'vcca.voidreason æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.voidreason Äæ¦ì¤w¦s¦b'
 end
 
 --RC2A issend,issendconfirm
@@ -600,7 +600,7 @@ begin
 end
 else
 begin
-	print 'rc2a.issend æ¬„ä½å·²å­˜åœ¨'
+	print 'rc2a.issend Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -612,7 +612,7 @@ begin
 end
 else
 begin
-	print 'rc2a.issendconfirm æ¬„ä½å·²å­˜åœ¨'
+	print 'rc2a.issendconfirm Äæ¦ì¤w¦s¦b'
 end
 
 --RC2A iscancel,iscancelconfirm
@@ -626,7 +626,7 @@ begin
 end
 else
 begin
-	print 'rc2a.iscancel æ¬„ä½å·²å­˜åœ¨'
+	print 'rc2a.iscancel Äæ¦ì¤w¦s¦b'
 end
 
 if exists(
@@ -639,7 +639,7 @@ begin
 end
 else
 begin
-	print 'rc2a.iscancelconfirm æ¬„ä½å·²å­˜åœ¨'
+	print 'rc2a.iscancelconfirm Äæ¦ì¤w¦s¦b'
 end
 --VCCB    iscancel,iscancelconfirm
 if exists(
@@ -652,7 +652,7 @@ begin
 end
 else
 begin
-	print 'vccb.iscancel æ¬„ä½å·²å­˜åœ¨'
+	print 'vccb.iscancel Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -664,7 +664,7 @@ begin
 end
 else
 begin
-	print 'vccb.iscancelconfirm æ¬„ä½å·²å­˜åœ¨'
+	print 'vccb.iscancelconfirm Äæ¦ì¤w¦s¦b'
 end
 --VCCA  status
 if exists(
@@ -677,7 +677,7 @@ begin
 end
 else
 begin
-	print 'vcca.status æ¬„ä½å·²å­˜åœ¨'
+	print 'vcca.status Äæ¦ì¤w¦s¦b'
 end
 --RC2A  status
 if exists(
@@ -690,7 +690,7 @@ begin
 end
 else
 begin
-	print 'rc2a.status æ¬„ä½å·²å­˜åœ¨'
+	print 'rc2a.status Äæ¦ì¤w¦s¦b'
 end
 --VCCB  status
 if exists(
@@ -703,7 +703,7 @@ begin
 end
 else
 begin
-	print 'vccb.status æ¬„ä½å·²å­˜åœ¨'
+	print 'vccb.status Äæ¦ì¤w¦s¦b'
 end
 
 --RC2a  taxrate
@@ -717,7 +717,7 @@ begin
 end
 else
 begin
-	print 'rc2a.taxrate æ¬„ä½å·²å­˜åœ¨'
+	print 'rc2a.taxrate Äæ¦ì¤w¦s¦b'
 end
 
 --RC2a  cancelreason
@@ -731,9 +731,9 @@ begin
 end
 else
 begin
-	print 'rc2a.cancelreason æ¬„ä½å·²å­˜åœ¨'
+	print 'rc2a.cancelreason Äæ¦ì¤w¦s¦b'
 end
---VCCB nob    å°æ–¹å‚³ä¾†çš„æŠ˜è®“å–®è™Ÿ
+--VCCB nob    ¹ï¤è¶Ç¨Óªº§éÅı³æ¸¹
 if exists(
 select *
 from sys.tables a
@@ -744,7 +744,7 @@ begin
 end
 else
 begin
-	print 'vccb.nob æ¬„ä½å·²å­˜åœ¨'
+	print 'vccb.nob Äæ¦ì¤w¦s¦b'
 end
 
 go
@@ -759,7 +759,7 @@ begin
 end
 else
 begin
-	print 'costa.price4 æ¬„ä½å·²å­˜åœ¨'
+	print 'costa.price4 Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -771,7 +771,7 @@ begin
 end
 else
 begin
-	print 'costa.price5 æ¬„ä½å·²å­˜åœ¨'
+	print 'costa.price5 Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -783,7 +783,7 @@ begin
 end
 else
 begin
-	print 'costa.price6 æ¬„ä½å·²å­˜åœ¨'
+	print 'costa.price6 Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -795,7 +795,7 @@ begin
 end
 else
 begin
-	print 'costa.price7 æ¬„ä½å·²å­˜åœ¨'
+	print 'costa.price7 Äæ¦ì¤w¦s¦b'
 end
 if exists(
 select *
@@ -807,12 +807,12 @@ begin
 end
 else
 begin
-	print 'costa.price8 æ¬„ä½å·²å­˜åœ¨'
+	print 'costa.price8 Äæ¦ì¤w¦s¦b'
 end
 
 GO
--- cucs   w01 ç›´æ¥äººå·¥, w02 è£½é€ è²»ç”¨   
---        m01 æˆå“é‡‘é¡, m02 æ¨£å“é‡‘é¡, m03 å ±å»¢é‡‘é¡    (ç”Ÿç”¢ä½œæ¥­é‡‘é¡ = æˆå“é‡‘é¡ + æ¨£å“é‡‘é¡ + å ±å»¢é‡‘é¡)
+-- cucs   w01 ª½±µ¤H¤u, w02 »s³y¶O¥Î   
+--        m01 ¦¨«~ª÷ÃB, m02 ¼Ë«~ª÷ÃB, m03 ³ø¼oª÷ÃB    (¥Í²£§@·~ª÷ÃB = ¦¨«~ª÷ÃB + ¼Ë«~ª÷ÃB + ³ø¼oª÷ÃB)
 	SET QUOTED_IDENTIFIER OFF 
 	declare @cmd nvarchar(max)
 	declare @table nvarchar(20)
@@ -836,7 +836,7 @@ GO
 		end
 		else
 		begin
-			print @table+'.w01 æ¬„ä½å·²å­˜åœ¨'
+			print @table+'.w01 Äæ¦ì¤w¦s¦b'
 		end
 		--w02
 		if exists(
@@ -850,7 +850,7 @@ GO
 		end
 		else
 		begin
-			print @table+'.w02 æ¬„ä½å·²å­˜åœ¨'
+			print @table+'.w02 Äæ¦ì¤w¦s¦b'
 		end
 		
 		--m01
@@ -865,7 +865,7 @@ GO
 		end
 		else
 		begin
-			print @table+'.m01 æ¬„ä½å·²å­˜åœ¨'
+			print @table+'.m01 Äæ¦ì¤w¦s¦b'
 		end
 		--m02
 		if exists(
@@ -879,7 +879,7 @@ GO
 		end
 		else
 		begin
-			print @table+'.m02 æ¬„ä½å·²å­˜åœ¨'
+			print @table+'.m02 Äæ¦ì¤w¦s¦b'
 		end
 		--m03
 		if exists(
@@ -893,10 +893,10 @@ GO
 		end
 		else
 		begin
-			print @table+'.m03 æ¬„ä½å·²å­˜åœ¨'
+			print @table+'.m03 Äæ¦ì¤w¦s¦b'
 		end
 		---------------------------------------------------------------------
-		--nob 2æ¬¡åŠ å·¥  è³‡æ–™ä¾†æº cucs.noa+cucs.noq
+		--nob 2¦¸¥[¤u  ¸ê®Æ¨Ó·½ cucs.noa+cucs.noq
 		if exists(
 		select *
 		from sys.tables a
@@ -908,10 +908,10 @@ GO
 		end
 		else
 		begin
-			print @table+'.nob æ¬„ä½å·²å­˜åœ¨'
+			print @table+'.nob Äæ¦ì¤w¦s¦b'
 		end
 		---------------------------------------------------------------------
-		--weight11  ç›¤ç›ˆé‡ 
+		--weight11  ½L¬Õ­« 
 		if exists(
 		select *
 		from sys.tables a
@@ -923,7 +923,7 @@ GO
 		end
 		else
 		begin
-			print @table+'.weight11 æ¬„ä½å·²å­˜åœ¨'
+			print @table+'.weight11 Äæ¦ì¤w¦s¦b'
 		end
 		
 		---------------------------------------------------------------------
@@ -939,7 +939,7 @@ GO
 		end
 		else
 		begin
-			print @table+'.w03 æ¬„ä½å·²å­˜åœ¨'
+			print @table+'.w03 Äæ¦ì¤w¦s¦b'
 		end
 		
 		--w04
@@ -954,7 +954,7 @@ GO
 		end
 		else
 		begin
-			print @table+'.w04 æ¬„ä½å·²å­˜åœ¨'
+			print @table+'.w04 Äæ¦ì¤w¦s¦b'
 		end
 		
 		--w05
@@ -969,7 +969,7 @@ GO
 		end
 		else
 		begin
-			print @table+'.w05 æ¬„ä½å·²å­˜åœ¨'
+			print @table+'.w05 Äæ¦ì¤w¦s¦b'
 		end
 		
 		--m04
@@ -984,7 +984,7 @@ GO
 		end
 		else
 		begin
-			print @table+'.m04 æ¬„ä½å·²å­˜åœ¨'
+			print @table+'.m04 Äæ¦ì¤w¦s¦b'
 		end
 		
 		fetch next from cursor_table
