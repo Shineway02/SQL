@@ -612,3 +612,44 @@ else
 begin
 	print 'vccb.nob 欄位已存在'
 end
+
+----------------------------
+-- 電子發票 產生XML時間	
+	if exists(
+	select *
+	from sys.tables a
+	left join sys.columns b on a.object_id = b.object_id and b.name='zdate'
+	where a.name='vcca' and b.column_id is null)
+	begin
+		alter table vcca add zdate nvarchar(20) null
+	end
+	else
+	begin
+		print 'vcca.zdate 欄位已存在'
+	end
+	
+	if exists(
+	select *
+	from sys.tables a
+	left join sys.columns b on a.object_id = b.object_id and b.name='zdate'
+	where a.name='rc2a' and b.column_id is null)
+	begin
+		alter table rc2a add zdate nvarchar(20) null
+	end
+	else
+	begin
+		print 'rc2a.zdate 欄位已存在'
+	end
+	
+	if exists(
+	select *
+	from sys.tables a
+	left join sys.columns b on a.object_id = b.object_id and b.name='zdate'
+	where a.name='vccb' and b.column_id is null)
+	begin
+		alter table vccb add zdate nvarchar(20) null
+	end
+	else
+	begin
+		print 'vccb.zdate 欄位已存在'
+	end
