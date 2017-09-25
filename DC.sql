@@ -653,3 +653,18 @@ end
 	begin
 		print 'vccb.zdate 欄位已存在'
 	end
+--------------------------------------------------------------------------------------
+-- Borrs chk2
+	if exists(
+	select *
+	from sys.tables a
+	left join sys.columns b on a.object_id = b.object_id and b.name='chk2'
+	where a.name='borrs' and b.column_id is null)
+	begin
+		alter table borrs add chk2 bit null
+	end
+	else
+	begin
+		print 'borrs.chk2 欄位已存在'
+	end
+	
