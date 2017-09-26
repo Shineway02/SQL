@@ -694,4 +694,17 @@ end
 	begin
 		print 'borrs.m02 欄位已存在'
 	end
+-- Borr memo2
+	if exists(
+	select *
+	from sys.tables a
+	left join sys.columns b on a.object_id = b.object_id and b.name='memo2'
+	where a.name='borr' and b.column_id is null)
+	begin
+		alter table borr add memo2 nvarchar(max) null
+	end
+	else
+	begin
+		print 'borr.memo2 欄位已存在'
+	end
 	
