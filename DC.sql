@@ -668,3 +668,30 @@ end
 		print 'borrs.chk2 欄位已存在'
 	end
 	
+-- Borrs m01  m02
+	if exists(
+	select *
+	from sys.tables a
+	left join sys.columns b on a.object_id = b.object_id and b.name='m01'
+	where a.name='borrs' and b.column_id is null)
+	begin
+		alter table borrs add m01 nvarchar(max) null
+	end
+	else
+	begin
+		print 'borrs.m01 欄位已存在'
+	end
+	
+	if exists(
+	select *
+	from sys.tables a
+	left join sys.columns b on a.object_id = b.object_id and b.name='m02'
+	where a.name='borrs' and b.column_id is null)
+	begin
+		alter table borrs add m02 nvarchar(max) null
+	end
+	else
+	begin
+		print 'borrs.m02 欄位已存在'
+	end
+	
