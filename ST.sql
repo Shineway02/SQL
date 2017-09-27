@@ -1033,3 +1033,17 @@ GO
 	begin
 		print 'vccb.zdate 欄位已存在'
 	end
+	
+--  VCCA   TIMEA
+	if exists(
+	select *
+	from sys.tables a
+	left join sys.columns b on a.object_id = b.object_id and b.name='timea'
+	where a.name='vcca' and b.column_id is null)
+	begin
+		alter table vcca add timea nvarchar(20) null
+	end
+	else
+	begin
+		print 'vcca.timea 欄位已存在'
+	end	
