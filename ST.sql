@@ -1047,3 +1047,16 @@ GO
 	begin
 		print 'vcca.timea 欄位已存在'
 	end	
+--ACOMP  AES金鑰
+	if exists(
+	select *
+	from sys.tables a
+	left join sys.columns b on a.object_id = b.object_id and b.name='aes'
+	where a.name='acomp' and b.column_id is null)
+	begin
+		alter table acomp add aes nvarchar(max) null
+	end
+	else
+	begin
+		print 'acomp.aes 欄位已存在'
+	end	
