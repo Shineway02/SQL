@@ -1060,3 +1060,71 @@ GO
 	begin
 		print 'acomp.aes 欄位已存在'
 	end	
+	
+--CUTS  total
+GO
+	SET QUOTED_IDENTIFIER OFF 
+	declare @cmd nvarchar(max)
+	declare @table nvarchar(20)
+	
+	declare cursor_table cursor for
+	select [name] from sys.tables where name like 'cuts%'
+	open cursor_table
+	fetch next from cursor_table
+	into @table
+	while(@@FETCH_STATUS <> -1)
+	begin
+		--w01
+		if exists(
+		select *
+		from sys.tables a
+		left join sys.columns b on a.object_id = b.object_id and b.name='total'
+		where a.name=@table and b.column_id is null)
+		begin
+			set @cmd = "alter table "+@table+" add total float null"
+			execute sp_executesql @cmd
+		end
+		else
+		begin
+			print @table+'.total 欄位已存在'
+		end
+		
+		fetch next from cursor_table
+		into @table
+	end
+	close cursor_table
+	deallocate cursor_table	
+	
+--CUBU  total
+GO
+	SET QUOTED_IDENTIFIER OFF 
+	declare @cmd nvarchar(max)
+	declare @table nvarchar(20)
+	
+	declare cursor_table cursor for
+	select [name] from sys.tables where name like 'cubu%'
+	open cursor_table
+	fetch next from cursor_table
+	into @table
+	while(@@FETCH_STATUS <> -1)
+	begin
+		--w01
+		if exists(
+		select *
+		from sys.tables a
+		left join sys.columns b on a.object_id = b.object_id and b.name='total'
+		where a.name=@table and b.column_id is null)
+		begin
+			set @cmd = "alter table "+@table+" add total float null"
+			execute sp_executesql @cmd
+		end
+		else
+		begin
+			print @table+'.total 欄位已存在'
+		end
+		
+		fetch next from cursor_table
+		into @table
+	end
+	close cursor_table
+	deallocate cursor_table	
